@@ -4,11 +4,20 @@ import UserInfo from './user-info';
 import Actions from './actions';
 import Repos from './repos';
 
-const AppContent = ({ userinfo, repos, starred }) => (
+const AppContent = ({
+  userinfo,
+  repos,
+  starred,
+  isFetching,
+  handleSearch,
+  handleRepos,
+  handleStarred,
+}) => (
   <div className="app">
-    <Search />
+    <Search isDisabled={isFetching} handleSearch={handleSearch} />
+    {isFetching && <div> Carregando...</div>}
     {!!userinfo && <UserInfo userinfo={userinfo} />}
-    {!!userinfo && <Actions />}
+    {!!userinfo && <Actions handleRepos={handleRepos} handleStarred={handleStarred} />}
     {!!repos.length &&
     <Repos
       className="repos"
@@ -23,14 +32,15 @@ const AppContent = ({ userinfo, repos, starred }) => (
     />}
   </div>
 );
-
+AppContent.defaultProps = {
+  userinfo: null,
+};
 AppContent.propTypes = {
-  userinfo: PropTypes.shape({
-    username: PropTypes.string,
-    repos: PropTypes.string,
-    fallowers: PropTypes.string,
-    fallowing: PropTypes.string,
-  }).isRequired,
+  isFetching: PropTypes.bool.isRequired,
+  handleSearch: PropTypes.func.isRequired,
+  handleStarred: PropTypes.func.isRequired,
+  handleRepos: PropTypes.func.isRequired,
+  userinfo: PropTypes.objectOf(PropTypes.any),
   repos: PropTypes.arrayOf(React.PropTypes.object).isRequired,
   starred: PropTypes.arrayOf(React.PropTypes.object).isRequired,
 };

@@ -4,7 +4,7 @@ const Repos = ({ className, title, repos }) => (
   <div className={className}>
     <h2>{title}</h2>
     <ul>
-      {repos.map(repo => <li key={repo.link}><a href={repo.link}>{repo.name}</a></li>)}
+      {repos.map(repo => <li key={repo.id}><a href={repo.html_url}>{repo.name}</a></li>)}
     </ul>
   </div>
 );
