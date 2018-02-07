@@ -1,4 +1,13 @@
 {
+  "name": "github-app",
+  "version": "0.1.0",
+  "author": {
+    "name": "Murilo Arruda",
+    "url": "https://github.com/passok11"
+  },
+  "keywords": [
+    "react", "react-dom", "github api"
+  ],
   "scripts": {
     "start": "node server.js"
   },
