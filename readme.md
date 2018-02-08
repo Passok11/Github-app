@@ -4,6 +4,11 @@ Github profile overview
 Search for an user and see their repositories and starred repositories
 
 ----
+## To-do
+- [] improve the UI
+- [] add more information about the user
+- [] add more information about the repositories and starred repos.
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
