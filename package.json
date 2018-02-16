@@ -6,7 +6,9 @@
     "url": "https://github.com/passok11"
   },
   "keywords": [
-    "react", "react-dom", "github api"
+    "react",
+    "react-dom",
+    "github api"
   ],
   "scripts": {
     "start": "node server.js"
@@ -23,7 +25,9 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.6.1",
+    "raw-loader": "^0.5.1",
     "react-hot-loader": "^3.0.0-beta.2",
+    "style-loader": "^0.20.2",
     "webpack": "^1.15.0",
     "webpack-dev-server": "^1.16.5",
     "webpack-validator": "^3.0.0"
